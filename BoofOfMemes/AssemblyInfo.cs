@@ -18,6 +18,6 @@ using System.Runtime.InteropServices;
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM
 // bereitgestellt wird.
 
-[assembly: Guid("27d7d985-5c2c-4843-a1fa-fb7012e66187")]
-[assembly: MelonInfo(typeof(BoofOfMemes.Main), "Boof of Memes", "1.0.0", "MOPSKATER")]
+[assembly: Guid("f3510c0c-aa1d-491b-9968-cb7c7dfc73da")]
+[assembly: MelonInfo(typeof(BoofMod.Main), "Boof Mod", "1.1.0", "MOPSKATER (Forked by DerelictJade)")]
 

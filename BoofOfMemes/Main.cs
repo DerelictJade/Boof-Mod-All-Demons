@@ -1,19 +1,17 @@
 ﻿using AntiCheat;
 using HarmonyLib;
 using MelonLoader;
-using System.Drawing;
 using System.Reflection;
 using UnityEngine.SceneManagement;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
-namespace BoofOfMemes
+namespace BoofMod
 {
     public class Main : MelonMod
     {
         public override void OnLateInitializeMelon()
         {
             Anticheat.TriggerAnticheat();
-            Anticheat.Register("BoofOfMemes");
+            Anticheat.Register("BoofMode");
             PatchGame();
 
             Game game = Singleton<Game>.Instance;
@@ -37,8 +35,8 @@ namespace BoofOfMemes
 
             public static void Register()
             {
-                Category = MelonPreferences.CreateCategory("Boof Mod");
-                Enabled = Category.CreateEntry("Require All Demons", true, description: "Enabling will require all demons be killed to unlock level gate (main levels only).");
+                Category = MelonPreferences.CreateCategory("Boof Mode");
+                Enabled = Category.CreateEntry("Require All Demons", true, description: "Enabling will require all demons be killed to unlock the level gate (main levels only).");
             }
         }
 
@@ -57,7 +55,7 @@ namespace BoofOfMemes
 
         private void PatchGame()
         {
-            HarmonyLib.Harmony harmony = new("de.MOPSKATER.BoofOfMemes");
+            HarmonyLib.Harmony harmony = new("nz.DerelictJade.BoofMod");
 
             MethodInfo target = typeof(LevelGate).GetMethod("SetUnlocked");
             HarmonyMethod patch = new(typeof(Main).GetMethod("UnlockGate"));
